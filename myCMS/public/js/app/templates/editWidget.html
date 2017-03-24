@@ -1,0 +1,121 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form>
+      <div class="form-group">
+        <label for="widgetTitle">Title</label>
+        <input type="text" class="form-control" id="widgetTitle" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="widgetDesc">Description</label>
+        <input type="text" class="form-control" id="widgetDesc" placeholder="">
+      </div>
+    </form>
+  </div>
+</div>
+
+<br />
+
+<div class="row" style="border-style: solid; border-width: 1px; border-color: grey;">
+  <div class="col-sm-12">
+    <label>HTML Entries:</label>
+  </div>
+
+  <div class="col-sm-1">
+    <button type="button" class="btn btn-success" id="addHTMLBtn"><i class="fa fa-plus"></i></button>
+  </div>
+  <div class="col-sm-10" id="contentBtnDiv">
+    <button type="button" class="btn btn-primary btnScaffold">0</button>
+  </div>
+  <div class="col-sm-1">
+    <button type="button" class="btn btn-danger pull-right" id="delHTMLBtn"><i class="fa fa-minus"></i></button>
+  </div>
+  
+  <!-- New text elements are appended to the widgetHTML div -->
+  <div id="widgetHTML">
+
+    <!-- This scaffolding code gets hidden -->
+    <div class="col-sm-12 scaffold">
+      <!-- <button type="button" class="btn btn-danger btn-xs pull-right deleteHTML"><i class="fa fa-close"></i></button> -->
+      <div>
+        <textarea class="form-control widgetText" rows="12"></textarea>
+      </div>
+      <br />
+    </div>
+
+  </div>
+
+</div>
+
+<br />
+
+
+<div class="row" style="border-style: solid; border-width: 1px; border-color: grey; padding: 10px">
+    <div class="col-sm-12">
+      <label>Images:</label>
+    </div>
+
+
+  <div id="widgetImages" >
+
+    <div class="row scaffold">
+      <br />
+      <div class="col-sm-3 img0">
+        <button type="button" class="btn btn-danger btn-xs pull-right"><i class="fa fa-close"></i></button>
+        <img class="img-responsive center-block" src="/images/no-image.jpg" onclick="global.editWidgetView.swapImg(-1)" />
+      </div>
+
+      <div class="col-sm-1"></div>
+
+      <div class="col-sm-3 img1">
+        <button type="button" class="btn btn-danger btn-xs pull-right"><i class="fa fa-close"></i></button>
+        <img class="img-responsive center-block" src="/images/no-image.jpg" onclick="global.editWidgetView.swapImg(-1)" />
+      </div>
+
+      <div class="col-sm-1"></div>
+
+      <div class="col-sm-3 img2">
+        <button type="button" class="btn btn-danger btn-xs pull-right"><i class="fa fa-close"></i></button>
+        <img class="img-responsive center-block" src="/images/no-image.jpg" onclick="global.editWidgetView.swapImg(-1)" />
+      </div>
+      <br />
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-success" id="addImgRowBtn"><i class="fa fa-plus"></i> Add Image Row</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="row" style="border-style: solid; border-width: 1px; border-color: grey;">
+  <div class="col-sm-12">
+    <label>Links/URLs:</label>
+  </div>
+
+  <div class="col-sm-1">
+    <button type="button" class="btn btn-success" id="addUrlBtn"><i class="fa fa-plus"></i></button>
+  </div>
+  <div class="col-sm-10" id="linkBtnDiv">
+    <button type="button" class="btn btn-primary urlBtn">0</button>
+  </div>
+  <div class="col-sm-1">
+    <button type="button" class="btn btn-danger pull-right" id="delUrlBtn"><i class="fa fa-minus"></i></button>
+  </div>
+  
+  <!-- New text elements are appended to the widgetHTML div -->
+  <div id="widgetUrl">
+
+    <!-- This scaffolding code gets hidden -->
+    <div class="col-sm-12 linkScaffold">
+      <div>
+        <input type="text" class="form-control urlText">
+      </div>
+      <br />
+    </div>
+
+  </div>
+
+</div>

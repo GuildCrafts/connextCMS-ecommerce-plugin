@@ -1,0 +1,10 @@
+{
+  "name": "connextCMS",
+  "version": "0.00.07",
+  "private": true,
+  "dependencies": {
+    "mailgun-js": "*",
+    "mpromise": "*",
+    "underscore": "^1.8.3"
+  }
+}

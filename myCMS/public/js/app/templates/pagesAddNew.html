@@ -1,0 +1,83 @@
+<!-- Date picker: https://github.com/eternicode/bootstrap-datepicker -->
+<link rel="stylesheet" href="../styles/bootstrap-datepicker.min.css">
+ 
+<div class="row">
+  <div class="col-md-12">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="pageTitle" class="col-sm-12">Title</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="pageTitle" placeholder="Title">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="publishedState" class="col-sm-12">Published State</label>
+        <div class="col-sm-8">
+          <select class="form-control" id="publishedState">
+            <option>Draft</option>
+            <option>Published</option>
+            <option>Archived</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group input-group date" data-provide="datepicker">
+        <label for="publishedDate" class="col-sm-12">Published Date</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control datepicker" id="publishedDate" placeholder="" data-date-auto-close="true">
+          <!-- required for datepicker -->
+          <div class="input-group-addon" style="opacity: 0;"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="section" class="col-sm-12">Section</label>
+        <div class="col-sm-8">
+          <select class="form-control" id="section">
+            <option>Section Data Not Loaded</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pagePriority" class="col-sm-12">Priority</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="pagePriority" id="pagePriority" placeholder="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pageContent" class="col-sm-12">Content</label>
+        <div class="col-sm-11">
+          <textarea class="form-control" id="pageContent" placeholder="Your content here." rows="20"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pageRedirect" class="col-sm-8">Redirect</label>
+        <label for="redirectNewWindow" class="col-sm-4">Open In New Window</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="pageRedirect" id="pageRedirect" placeholder="http://google.com">
+        </div>
+        <div class="col-sm-offset-1 col-sm-3">
+          <div class="checkbox">
+              <input type="checkbox" id="redirectNewWindow" name="redirectNewWindow">
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-2">
+          <button type="button" class="btn btn-primary" id="submitPage">Submit</button>
+        </div>
+        <div class="col-sm-2">
+          <button hidden type="button" class="btn btn-danger" id="deletePage">Delete</button>
+        </div>
+        <div class="col-sm-offset-6 col-sm-2">
+          <button hidden type="button" class="btn btn-default" id="viewPage">View Page</button>
+        </div>
+      </div>
+    </form>
+    <br>
+    <!--
+    <form>
+      <textarea id="mytextarea">Hello, World!</textarea>
+    </form>
+    -->
+  </div>
+</div>
