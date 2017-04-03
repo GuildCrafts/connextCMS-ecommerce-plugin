@@ -1,0 +1,80 @@
+#!/bin/bash
+echo Preparing to copy ConnextCMS files...
+
+echo Copying Keystone core files...
+cp keystone-files/keystone.js ../myCMS/
+#cp keystone-files/redirect-dashboard.js ../myCMS/node_modules/keystone/admin/public/js/
+cp keystone-files/index.html ../myCMS/node_modules/keystone/admin/server/templates/
+cp keystone-files/index.js ../myCMS/node_modules/keystone/admin/server/routes/
+
+#Used for testing the KeystoneJS Admin API
+#cp keystone-files/update.js ../myCMS/node_modules/keystone/admin/server/api/item/
+
+#csrf.js fixes KeystoneJS GitHub Issue #3420
+#cp keystone-files/csrf.js ../myCMS/node_modules/keystone/lib/security/ 
+
+#This sets a 5 minutes timeout on MongoDB connections. Needed for debugging, but not production.
+#cp keystone-files/openDatabaseConnection.js ../myCMS/node_modules/keystone/lib/core/
+
+echo Copying Keystone Models...
+cp models/*.js ../myCMS/models/
+
+echo Copying Keystone Templates...
+cp templates/views/*.hbs ../myCMS/templates/views/
+cp templates/views/helpers/*.js ../myCMS/templates/views/helpers/
+cp templates/views/layouts/*.hbs ../myCMS/templates/views/layouts/
+
+echo Copying Keystone Routes...
+cp routes/index.js ../myCMS/routes/
+mkdir ../myCMS/routes/api
+cp routes/api/*.js ../myCMS/routes/api/
+cp routes/views/* ../myCMS/routes/views/
+
+echo Copying Keystone Public directory...
+cp public/*.* ../myCMS/public/
+
+echo ...creating uploads directory...
+mkdir ../myCMS/public/uploads
+mkdir ../myCMS/public/uploads/images
+mkdir ../myCMS/public/uploads/files
+
+echo ...copying fonts...
+cp public/fonts/* ../myCMS/public/fonts/
+
+echo ...copying images...
+cp public/images/*.jpg ../myCMS/public/images/
+cp public/images/*.png ../myCMS/public/images/
+cp public/images/*.gif ../myCMS/public/images/
+cp public/images/*.svg ../myCMS/public/images/
+cp public/favicon.ico ../myCMS/public/
+
+echo ...copying javascript files...
+cp public/js/*.js ../myCMS/public/js/
+cp public/js/*.json ../myCMS/public/js/
+cp -r public/js/app ../myCMS/public/js/
+cp -r public/js/lib ../myCMS/public/js/
+
+echo ...copying styles...
+cp -r public/styles/fonts ../myCMS/public/styles/
+cp -r public/styles/skins ../myCMS/public/styles/
+cp public/styles/*.css ../myCMS/public/styles/
+cp public/styles/*.map ../myCMS/public/styles/
+cp public/styles/bootstrap/* ../myCMS/public/styles/bootstrap/
+
+echo Copying Nodemailer directory
+mkdir ../myCMS/private
+cp private/*.json ../myCMS/private/
+
+echo Restoring backed up media
+cp -r ../bkupMedia/* ../myCMS/public/uploads/
+
+echo Run 'npm install' in the myCMS directory to install dependencies.
+cp package.json ../myCMS/
+
+#Need to remove evidence of git repository or else 'npm install' won't run.
+rm -rf ../myCMS/node_modules/keystone/.git
+rm -rf ../myCMS/node_modules/keystone-storage-namefunctions/.git
+
+#Copy the server settings file if they exist in the home directory.
+cp ../publicsettings.json ../myCMS/public/js/
+cp ../privatesettings.json ../myCMS/private/
